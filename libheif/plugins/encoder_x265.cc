@@ -915,7 +915,7 @@ static struct heif_error x265_encode_image(void* encoder_raw, const struct heif_
                       &encoder->nals,
                       &encoder->num_nals,
                       pic,
-                      &out_pic);
+                      out_pic);
 #else
   api->encoder_encode(encoder->encoder,
                       &encoder->nals,
@@ -990,7 +990,7 @@ static struct heif_error x265_get_compressed_data(void* encoder_raw, uint8_t** d
                                      &encoder->nals,
                                      &encoder->num_nals,
                                      NULL,
-                                     &out_pic);
+                                     out_pic);
 #else
     int result = api->encoder_encode(encoder->encoder,
                                      &encoder->nals,
